@@ -1,0 +1,7 @@
+
+  @for (conference of conferences; track conference.name) {
+    <app-conferance-details
+      [conf]="conference"
+      (increment)="inc()">
+    </app-conferance-details>
+  }
