@@ -1,0 +1,25 @@
+<h1>Ajouter un utilisateur</h1>
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <label for="username">Username :</label>
+  <input id="username" formControlName="username">
+  @if (userForm.get('username')?.invalid && userForm.get('username')?.touched) {
+    <small>Le nom est obligatoire (3 caractères minimum).</small>
+  }
+  <br>
+
+  <label for="email">Email :</label>
+  <input id="email" formControlName="email">
+  @if (userForm.get('email')?.invalid && userForm.get('email')?.touched) {
+    <small>Veuillez saisir un email valide.</small>
+  }
+  <br>
+
+  <label for="password">Password :</label>
+  <input id="password" type="password" formControlName="password">
+  @if (userForm.get('password')?.invalid && userForm.get('password')?.touched) {
+    <small>Le mot de passe est obligatoire (6 caractères minimum).</small>
+  }
+  <br>
+
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>

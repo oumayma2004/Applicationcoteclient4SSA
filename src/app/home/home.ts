@@ -1,12 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { UserForm } from '../user-form/user-form';
+
 @Component({
   selector: 'app-home',
-  imports: [FormsModule],
+  imports: [FormsModule, UserForm],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
+
 export class Home {
 
   nom = "mayma";
